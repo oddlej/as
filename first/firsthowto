@@ -1,0 +1,32 @@
+Our first AArch64 assembler program
+
+Let's write a very simple program that just returns an error code of two.
+
+// first.s
+.text
+
+.globl main
+
+main:
+     mov w0, #2
+     ret
+
+Let's assemble it.
+
+$ aarch64-linux-gnu-as -c -o first.o first.s
+
+And now link it, for convenience we will use gcc.
+
+$ aarch64-linux-gnu-gcc -static -o first first.o
+
+Run it and check the return. 
+
+$ ./first
+$ echo $?
+$ 2 
+
+2 is the return
+
+https://thinkingeek.com/2016/10/08/exploring-aarch64-assembler-chapter-2/
+
+
