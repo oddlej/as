@@ -1,4 +1,4 @@
-// test.s e
+// test.s
 .text
 .globl main
 
